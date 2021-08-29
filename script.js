@@ -44,9 +44,15 @@ function deleteCheck(e){
     const item = e. target;
 
     //delete list
-    if (item.classList[0]=== 'trash-btn'){
+    if (item.classList[0] === 'trash-btn'){
         const todo = item.parentElement;
-        todo.remove(); 
+        
+        //animate delete
+        todo.classList.add("fall");
+        //todo.remove();
+        todo.addEventListener('transitioned', function(){
+            todo.remove();
+        }); 
     }
 
     //check marked items
