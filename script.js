@@ -22,16 +22,21 @@ function addTodo(event){
     newTodo.innerText = todoInput.value;
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
-    
+    todoInput.value = "";
+
+    newTodo.classList.add("todo-item");
+    todoDiv.appendChild(newTodo);
+    todoInput.value = "";
+
     //completed button
     const completedButton = document.createElement("button");
-    completedButton.innerHTML = '<i class="fas fa-check"> </i>';
+    completedButton.innerHTML = `<i class="fas fa-check"> </i>`;
     completedButton.classList.add("complete-btn");
     todoDiv.appendChild(completedButton);
 
     //checked Trash button
     const trashButton = document.createElement("button");
-    trashButton.innerHTML = '<i class="fas fa-trash"> </i>';
+    trashButton.innerHTML = `<i class="fas fa-trash"> </i>`;
     trashButton.classList.add("trash-btn");
     todoDiv.appendChild(trashButton);
 
@@ -39,7 +44,7 @@ function addTodo(event){
     todoList.appendChild(todoDiv);
 
     //clearing form input
-    todoInput.value ="";
+    //todoInput.value = "";
 }
 
 function deleteTodo(e){
